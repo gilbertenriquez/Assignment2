@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="Assignment1.Pages.WelcomePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout>
+
+        <skia:SKLottieView Source="Logo1.json"
+                           RepeatCount="-1"
+                           HeightRequest="300" WidthRequest="300"/>
+
+        <Grid Margin="60"
+         VerticalOptions="CenterAndExpand"
+        RowDefinitions="Auto,Auto,Auto">
+
+            <Label Text="Manage your Daily Task " FontSize="Header" FontAttributes="Bold"/>
+
+            <Label Grid.Row="1" Text="Team and Project management with Solution Providing App"/>
+
+            <Grid Grid.Row ="2" ColumnDefinitions="*, *" Margin="5" ColumnSpacing="5">
+
+                <Button Text="Get Started" 
+                        
+                        HeightRequest="50" 
+                        BackgroundColor="Purple"
+                        TextColor="White" x:Name="btnregister" 
+                        Clicked="btnregister_Clicked"/>
+
+                <Button Grid.Column="1" Text="I already Have an Account" 
+                        
+                        HeightRequest="50"
+                        BackgroundColor="White"
+                        TextColor="Purple"
+                        x:Name="btnlogin"
+                        Clicked="btnlogin_Clicked"/>
+            </Grid>
+        </Grid>
+        
+    </VerticalStackLayout>
+
+
+</ContentPage>
