@@ -9,7 +9,7 @@
         <Image Source="logo.png" HeightRequest="150" WidthRequest="150"/>
         <VerticalStackLayout Spacing="5">
             <Label Text=" Welcome!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center"/>
-            <Label Text=" Login Enter Your Account!" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center"/>
+            <Label Text=" Create Your New Account!" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center"/>
 
         </VerticalStackLayout>
 

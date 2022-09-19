@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:Class="Assignment1.Pages.LoginPage1"
-             Title="LoginPage1">
-    
-    <ScrollView>
-        <AbsoluteLayout>
-            <Grid VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1"
+             Title="">
+
+
+    <VerticalStackLayout>  
+        <skia:SKLottieView Source="Logo1.json"
+                           RepeatCount="-1"
+                           HeightRequest="300" WidthRequest="300"/>
+
+        <AbsoluteLayout Margin="0,60,0,0">
+            <Grid  VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1"
               AbsoluteLayout.LayoutFlags="All">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -72,15 +78,15 @@
                                     BackgroundColor="{StaticResource ButtonColor}"                                     
                                     CornerRadius="5" 
                                     Padding="0" 
-                                    Clicked="btnsignin_Clicked"
-                                    
+                                    Clicked="btnsignin_Clicked"                                    
                                     HorizontalOptions="FillAndExpand"
                                     TextTransform="None"/>
                             
                             <Button Text="Cancel" TextColor="{StaticResource TextColorBlack}" BackgroundColor="{StaticResource ButtonColor}"
-                            BorderColor="{StaticResource Primary}" BorderWidth="05" 
+                            BorderColor="{StaticResource Primary}" 
                                     x:Name="btncancel"
                                     Clicked="btncancel_Clicked"
+                                    Margin="10,0,0,0"
                                     CornerRadius="5"
                                     Padding="0"
                                     HorizontalOptions="FillAndExpand"
@@ -103,5 +109,5 @@
                 <Label x:Name="lblorderstate" Text="We're processing your request, please wait..." Margin="0" HorizontalOptions="CenterAndExpand" TextColor="WhiteSmoke"/>
             </StackLayout>
         </AbsoluteLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 </ContentPage>

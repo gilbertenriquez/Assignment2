@@ -56,8 +56,9 @@ namespace Assignment1.Model
             {
                 var evaluateEmail = (await client.Child("Users")
                                   .OnceAsync<Users>())
-                                  .FirstOrDefault(a => a
-                                  .Object.Email == email && a.Object.Password == Pass);
+                                  .FirstOrDefault
+                                  (a => a.Object.Email == email && 
+                                   a.Object.Password == Pass);
                 return evaluateEmail != null;
         }
             catch
