@@ -11,7 +11,7 @@
                            RepeatCount="-1"
                            HeightRequest="300" WidthRequest="300"/>
 
-        <AbsoluteLayout Margin="0,60,0,0">
+        <AbsoluteLayout Margin="0,100,0,0">
             <Grid  VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1"
               AbsoluteLayout.LayoutFlags="All">
                 <Grid.RowDefinitions>

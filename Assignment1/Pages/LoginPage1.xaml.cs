@@ -13,17 +13,19 @@ public partial class LoginPage1 : ContentPage
 	private async void btnsignin_Clicked(object sender, EventArgs e)
 	{
 		var a = await user.UserLogin(entryEmail.Text, entryPassword.Text);
-		if (string.IsNullOrEmpty(entryEmail.Text) || string.IsNullOrEmpty(entryPassword.Text))
-		{
-			await DisplayAlert("Alert!", "Please Check The Email or Pasword They are Empty! need to Fill it up", "Got it!");
-			return;
-		}				        
+
+        if (string.IsNullOrEmpty(entryEmail.Text) || string.IsNullOrEmpty(entryPassword.Text))
+        {
+            await DisplayAlert("Alert!", "Please Fill up your Email or Pasword!", "Got it!");
+            return;
+        }
+
         if (a)
 		{
-			await DisplayAlert("Login!", "Access Granted!", "OK!");
+			await DisplayAlert("Alert!", "Access Granted!", "OK!");
 			return;
 		}
-        await DisplayAlert("Login!", "Access Denied!", "OK!");		
+        await DisplayAlert("Alert!", "Access Denied!", "OK!");		
     }
 
 	private async void btncancel_Clicked(object sender, EventArgs e)
