@@ -1,10 +1,12 @@
 ﻿using Firebase.Database.Query;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Assignment1.App;
+using Firebase.Database;
 
 namespace Assignment1.Model
 {
@@ -57,15 +59,26 @@ namespace Assignment1.Model
                 var evaluateEmail = (await client.Child("Users")
                                   .OnceAsync<Users>())
                                   .FirstOrDefault
-                                  (a => a.Object.Email == email && 
+                                  (a => a.Object.Email == email &&
                                    a.Object.Password == Pass);
                 return evaluateEmail != null;
-        }
+            }
             catch
             {
                 return false;
             }
         }
+
+        public ObservableCollection<Users> GetUserList()
+        {
+            var userlist = client
+                 .Child("Users")
+                .AsObservable<Users>()
+                .AsObservableCollection();
+            return userlist;
+
+        }
+
     }
-    
+
 }

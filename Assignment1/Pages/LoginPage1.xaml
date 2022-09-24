@@ -5,12 +5,7 @@
              x:Class="Assignment1.Pages.LoginPage1"
              Title="">
 
-
-    <VerticalStackLayout>  
-        <skia:SKLottieView Source="Logo1.json"
-                           RepeatCount="-1"
-                           HeightRequest="300" WidthRequest="300"/>
-
+    <ScrollView>
         <AbsoluteLayout Margin="0,100,0,0">
             <Grid  VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1"
               AbsoluteLayout.LayoutFlags="All">
@@ -81,7 +76,7 @@
                                     Clicked="btnsignin_Clicked"                                    
                                     HorizontalOptions="FillAndExpand"
                                     TextTransform="None"/>
-                            
+
                             <Button Text="Cancel" TextColor="{StaticResource TextColorBlack}" BackgroundColor="{StaticResource ButtonColor}"
                             BorderColor="{StaticResource Primary}" 
                                     x:Name="btncancel"
@@ -109,5 +104,5 @@
                 <Label x:Name="lblorderstate" Text="We're processing your request, please wait..." Margin="0" HorizontalOptions="CenterAndExpand" TextColor="WhiteSmoke"/>
             </StackLayout>
         </AbsoluteLayout>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

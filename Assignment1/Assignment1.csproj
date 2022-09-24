@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\faze.jpg" />
 	  <None Remove="Resources\Images\locked.png" />
 	  <None Remove="Resources\Images\lockin.png" />
@@ -65,6 +66,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
