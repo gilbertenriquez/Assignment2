@@ -44,12 +44,12 @@
             <CollectionView.ItemTemplate>
             <DataTemplate>
             <ContentView Padding="2">
-            <SwipeView HeightRequest="96" 
+            <!--<SwipeView HeightRequest="96"--><!--
                                    WidthRequest="50" 
                                    BackgroundColor="Transparent"                   
-                                   IsClippedToBounds="True">
+                                   IsClippedToBounds="True">-->
                             
-            <SwipeView.LeftItems>
+            <!--<SwipeView.LeftItems>--><!--
             <SwipeItems Mode="Execute">
             <SwipeItemView BackgroundColor="Transparent" 
                            Margin="5" 
@@ -69,10 +69,11 @@
                 
             </StackLayout>
             </StackLayout>
-            </SwipeItemView>
-            </SwipeItems>
-            </SwipeView.LeftItems>
-            <Frame CornerRadius="10" 
+            --><!--</SwipeItemView>-->
+            <!--</SwipeItems>
+            </SwipeView.LeftItems>-->
+            <Frame 
+                   CornerRadius="10" 
                    HeightRequest="95" 
                    Padding="0" Margin="2"
                    IsClippedToBounds="True"
@@ -134,7 +135,7 @@
                                     </StackLayout>
                                 </Grid>
                             </Frame>
-                        </SwipeView>
+                        <!--</SwipeView>-->
                     </ContentView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
