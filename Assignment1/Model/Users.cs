@@ -67,7 +67,22 @@ namespace Assignment1.Model
             {
                 return false;
             }
+           
         }
+        public async Task<string> GetUserKey(string mail)
+            {
+            try
+            {
+                var getuserkey = (await client.Child("Users").OnceAsync<Users>()).
+                    FirstOrDefault(a=>a.Object.Email == mail);
+                return getuserkey?.Key;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+
+            }
 
         public ObservableCollection<Users> GetUserList()
         {
@@ -80,5 +95,6 @@ namespace Assignment1.Model
         }
 
     }
+   
 
 }

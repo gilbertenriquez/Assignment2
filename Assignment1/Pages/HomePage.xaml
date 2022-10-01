@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment1.Pages.HomePage"
              Title="HomePage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="" Text="Modify" x:Name="edititem"
+                     Order="Secondary"  Clicked="edititem_Clicked" />
+    </ContentPage.ToolbarItems>
     
     <Grid RowDefinitions="Auto,Auto,Auto,*">
         <Frame HeightRequest="100" CornerRadius="50" BackgroundColor="{StaticResource FrameColor_1}"
@@ -36,7 +41,9 @@
                x:Name="loader" TextColor="{StaticResource TextSoft}"
                HorizontalOptions="CenterAndExpand"/>
 
-        <CollectionView Grid.Row="3" x:Name="ListUsers">
+        <CollectionView Grid.Row="3" x:Name="ListUsers" SelectionMode="Single"
+                        SelectionChanged="ListUsers_SelectionChanged">
+            
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="1" />
 
@@ -44,13 +51,12 @@
             <CollectionView.ItemTemplate>
             <DataTemplate>
             <ContentView Padding="2">
-            <!--<SwipeView HeightRequest="96"--><!--
-                                   WidthRequest="50" 
+            <!--<SwipeView HeightRequest="96" 
                                    BackgroundColor="Transparent"                   
-                                   IsClippedToBounds="True">-->
+                                   IsClippedToBounds="True">
                             
-            <!--<SwipeView.LeftItems>--><!--
-            <SwipeItems Mode="Execute">
+            <SwipeView.LeftItems>-->
+            <!--<SwipeItems Mode="Reveal">
             <SwipeItemView BackgroundColor="Transparent" 
                            Margin="5" 
                            x:Name="itemOnEdit">
@@ -69,16 +75,16 @@
                 
             </StackLayout>
             </StackLayout>
-            --><!--</SwipeItemView>-->
-            <!--</SwipeItems>
-            </SwipeView.LeftItems>-->
-            <Frame 
-                   CornerRadius="10" 
+            </SwipeItemView>
+            </SwipeItems>-->
+            <!--</SwipeView.LeftItems>-->
+            <Border 
+                    
                    HeightRequest="95" 
                    Padding="0" Margin="2"
-                   IsClippedToBounds="True"
+                   
                    BackgroundColor="{StaticResource Primary}" 
-                   HasShadow="False">
+                   >
                 
                                 <!--Must add expander so the client can view if the renter has an advance payment-->
                 
@@ -87,7 +93,7 @@
                         WidthRequest="5" 
                         BackgroundColor="{StaticResource ButtonColor}"/>
                       
-                  <StackLayout Grid.Column="1" Margin="15" 
+                  <StackLayout Grid.Column="1" Margin="0" 
                                Orientation="Horizontal" 
                                HorizontalOptions="FillAndExpand"
                                BackgroundColor="Transparent">
@@ -109,32 +115,33 @@
                                                    FontAttributes="Bold" LineBreakMode="TailTruncation"
                                                    TextColor="{StaticResource TextColorWhite}" />
 
-                  <Label VerticalOptions="CenterAndExpand" Text="School name:"
+                  <Label VerticalOptions="CenterAndExpand" Text="Last Name:"
                                                    TextColor="{StaticResource TextSoft}"
                                                    FontSize="Medium"
                                                    HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" />
                       
-                  <Label Grid.Row="1" Grid.Column="1" Text="{Binding SchoolName}"
+                  <Label Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"
                                                    FontSize="Medium"
                                                    FontAttributes="Bold" LineBreakMode="TailTruncation"
                                                    TextColor="{StaticResource TextColorWhite}" />
 
-                  <Label VerticalOptions="CenterAndExpand" Text="School address:"
+                  <Label VerticalOptions="CenterAndExpand" Text="Email Address:"
                                                    TextColor="{StaticResource TextSoft}"
                                                    FontSize="Medium"
                                                    HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" />
-                  <Label Grid.Row="2" Grid.Column="1" Text="{Binding SchoolAddress}"
-                   FontSize="Medium"
-                   FontAttributes="Bold" 
-                   LineBreakMode="TailTruncation"
-                   TextColor="{StaticResource TextColorWhite}" />
+                      
+                  <Label Grid.Row="2" Grid.Column="1" Text="{Binding Email}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" 
+                                                   LineBreakMode="TailTruncation"
+                                                   TextColor="{StaticResource TextColorWhite}" />
                       
                       
                       
                                         </Grid>
                                     </StackLayout>
                                 </Grid>
-                            </Frame>
+                            </Border>
                         <!--</SwipeView>-->
                     </ContentView>
                 </DataTemplate>
