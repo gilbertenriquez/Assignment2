@@ -17,6 +17,7 @@ namespace Assignment1.Model
         public string Email { get; set; }
         public string Password { get; set; }
 
+        //add or create
         public async Task<bool> AddUser(string fname, string lname, string mail, string pword)
         {
             try
@@ -51,7 +52,7 @@ namespace Assignment1.Model
                 return false;
             }
         }
-
+        //login code
         public async Task<bool> UserLogin(string email, string Pass)
         {
             try
@@ -69,12 +70,19 @@ namespace Assignment1.Model
             }
            
         }
+        //retrieve code
         public async Task<string> GetUserKey(string mail)
             {
             try
             {
                 var getuserkey = (await client.Child("Users").OnceAsync<Users>()).
                     FirstOrDefault(a=>a.Object.Email == mail);
+                if (getuserkey == null) return null;
+
+                  firstname = getuserkey.Object.FirstName;
+                  lastname = getuserkey.Object.LastName;
+                  pass = getuserkey.Object.Password;
+
                 return getuserkey?.Key;
             }
             catch(Exception ex)
@@ -83,6 +91,56 @@ namespace Assignment1.Model
             }
 
             }
+
+
+        //update code
+        public async Task<bool> editdata(string lname,string fname)
+        {
+            try
+            {
+                var evaluteuser = (await client
+                    .Child("Users")
+                    .OnceAsync<Users>())
+                    .FirstOrDefault
+                    (a => a.Object.Email == email);
+                if(evaluteuser != null)
+                {
+                    Users user = new Users
+                    {
+                        Email = email,  
+                        FirstName = fname,
+                        LastName = lname,
+                        Password = pass
+                    };
+                    await client.Child("Users").Child(key).PatchAsync(user);
+                    client.Dispose();
+                }
+                client.Dispose();
+                return false;
+            }
+            catch(Exception ex)
+            {
+                client.Dispose();
+                return false;
+            }
+        }
+        public async Task<string> Deletedata()
+        {
+            try
+            {
+                await client
+                    .Child($"Users/{key}")
+                    .DeleteAsync();
+                return "removed";
+            }
+            catch (Exception ex)
+            {
+                return " error";
+            }
+        }
+
+
+
 
         public ObservableCollection<Users> GetUserList()
         {
@@ -93,6 +151,7 @@ namespace Assignment1.Model
             return userlist;
 
         }
+
 
     }
    

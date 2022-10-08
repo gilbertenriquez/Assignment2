@@ -16,6 +16,7 @@ public partial class HomePage : ContentPage
     {
         App.email = (e.CurrentSelection.FirstOrDefault() as Users)?.Email;
         App.key = await userlist.GetUserKey(App.email);
+        //await Navigation.PushAsync(new EditPage());
 
     }
 
@@ -30,4 +31,15 @@ public partial class HomePage : ContentPage
             await DisplayAlert("Data", "Please Select a Data to modify! ", "Got it!");
         }
     }
+
+    private async void BTN_delete_Clicked(object sender, EventArgs e)
+    {
+        var result = await DisplayAlert("Alert", "Are You Sure to Delete", "YES", "NO");
+        if (result)
+        {
+            await userlist.Deletedata();
+
+        }
+    }
+        
 }
