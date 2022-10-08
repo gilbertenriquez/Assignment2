@@ -38,8 +38,10 @@ public partial class HomePage : ContentPage
         if (result)
         {
             await userlist.Deletedata();
+            return;
 
         }
+        await DisplayAlert("Alert", "Deletion not Successfully", "YES");
     }
         
 }
