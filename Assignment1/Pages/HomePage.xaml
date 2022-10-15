@@ -5,11 +5,23 @@
              Title="HomePage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="" Text="Modify" x:Name="edititem"
-                     Order="Secondary"  Clicked="edititem_Clicked" />
+        <ToolbarItem IconImageSource="" 
+                     Text="Modify" 
+                     x:Name="edititem"
+                     Order="Secondary"  
+                     Clicked="edititem_Clicked" />
           
-        <ToolbarItem IconImageSource="" Text="Delete" x:Name="BTN_delete"
-                     Order="Secondary"  Clicked="BTN_delete_Clicked" />
+        <ToolbarItem IconImageSource="" 
+                     Text="Delete" 
+                     x:Name="BTN_delete"
+                     Order="Secondary"  
+                     Clicked="BTN_delete_Clicked" />
+
+        <ToolbarItem IconImageSource="" 
+                     Text="addworker"
+                     x:Name="addwork"
+                     Order="Secondary"
+                     Clicked="addwork_Clicked"/>
     </ContentPage.ToolbarItems>
 
 

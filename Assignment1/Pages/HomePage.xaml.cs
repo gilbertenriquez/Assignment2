@@ -43,5 +43,16 @@ public partial class HomePage : ContentPage
         }
         await DisplayAlert("Alert", "Deletion not Successfully", "YES");
     }
-        
+
+    private async void addwork_Clicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(App.key))
+        {
+            await Navigation.PushAsync(new AddWorkPage());
+        }
+        else
+        {
+            await DisplayAlert("Data", "Please Select a Data to modify! ", "Got it!");
+        }
+    }
 }

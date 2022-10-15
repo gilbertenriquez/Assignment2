@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment1.Pages.AddWorkPage"
+             Title="AddWorkPage">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Entry x:Name="entryworkname" Placeholder="Work Name"/>
+        <Button x:Name="BTN_save" Text="Save Work" Clicked="BTN_save_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
